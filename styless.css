@@ -1,0 +1,11 @@
+.color-background{
+    background-color:rgba(42, 28, 230, 0.897);
+}
+
+.bg-white{
+    border: solid 0.2rem black;
+    border-radius: 0.4rem;
+}
+.background{
+    background-color: rgba(97, 138, 138, 0.281);
+}
