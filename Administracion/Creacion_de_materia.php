@@ -15,11 +15,11 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
     crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="../styless.css" />
   <title>Creacion de Materia A</title>
 </head>
 
-<body>
+<body class="color-background">
   <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
     <!-- Navbar content -->
     <div class="btn-group" role="group">
@@ -28,9 +28,9 @@
         Estudiantes
       </button>
       <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-        <a class="dropdown-item" href="./Estudiantes.html">Ver estudiantes</a>
-        <a class="dropdown-item" href="./Materia.html">Materias</a>
-        <a class="dropdown-item" href="./Archivos.html">Archivos</a>
+        <a class="dropdown-item" href="./Estudiantes.php">Ver estudiantes</a>
+        <a class="dropdown-item" href="./Materia.php">Materias</a>
+        <a class="dropdown-item" href="./Archivos.php">Archivos</a>
       </div>
     </div>
     <div class="btn-group" role="group">
@@ -39,9 +39,9 @@
         Usuario
       </button>
       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="btnGroupDrop1">
-        <a class="dropdown-item" href="./Roles.html">Roles</a>
-        <a class="dropdown-item" href="./Usuario.html">Usuarios</a>
-        <a class="dropdown-item" href="./Cerrar_sesion.html">Cerrar sesión</a>
+        <a class="dropdown-item" href="./Roles.php">Roles</a>
+        <a class="dropdown-item" href="./Usuario.php">Usuarios</a>
+        <a class="dropdown-item" href="../Proyecto/index.php">Cerrar sesión</a>
       </div>
     </div>
   </nav>
@@ -50,17 +50,36 @@
       <div class="card">
         <div class="card-header d-flex">
           <h5>Creacion de Materia</h5>
-          <a href="./Materia.html" class="btn btn-primary ml-auto ">Regresar</a>
+          <a href="./Materia.php" class="btn btn-primary ml-auto ">Regresar</a>
         </div>
         <div class="card-body">
+           <?php 
 
-          <form>
+                if (isset($_GET['confirm'])) {
+                    if ($_GET['confirm'] === "0") {
+                        echo '<div class="alert alert-danger" role="alert">Dato no ingresado</div>';
+                    }
+                    if ($_GET['confirm'] === "1") {
+                        echo '<div class="alert alert-success" role="alert">Dato ingresado correctamente.</div>';
+                    }
+                    if ($_GET['confirm'] === "2") {
+                        echo '<div class="alert alert-danger" role="alert">Uno o mas campos estan vacios</div>';
+                    }
+                    if ($_GET['confirm'] === "3") {
+                        echo '<div class="alert alert-danger" role="alert">Materia ya registrado</div>';
+                    }
+                } 
+
+                ?>
+
+          <form action="./enlace/config/insertarmateria.php" method="POST">
             <div class="form-group">
               <label for="User">Nombre</label>
-              <input required type="text" class="form-control" id="User" aria-describedby="emailHelp">
+              <input required type="text" class="form-control" name="nombre" id="nombre" +>
             </div>
+            <button type="submit" class="btn btn-primary ">Crear</button> 
           </form>
-          <button type="submit" class="btn btn-primary">Crear</button>
+          
         </div>
       </div>
 

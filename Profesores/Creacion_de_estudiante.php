@@ -14,10 +14,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
         crossorigin="anonymous"></script>
-    <title>Creacion de estudiante A</title>
+        <link rel="stylesheet" href="../styless.css" />
+    <title>Creacion de estudiante P</title>
 </head>
 
-<body>
+<body class="color-background">
     <nav class="navbar" style="background-color: #e3f2fd;">
         <!-- Navbar content -->
         <div class="btn-group" role="group">
@@ -26,29 +27,27 @@
                 Estudiantes
             </button>
             <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                <a class="dropdown-item" href="./Estudiantes.html">Ver estudiantes</a>
-                <a class="dropdown-item" href="./Materia.html">Materias</a>
-                <a class="dropdown-item" href="./Archivos.html">Archivos</a>
+                <a class="dropdown-item" href="./Estudiantes.php">Ver estudiantes</a>
+                <a class="dropdown-item" href="./Materia.php">Materias</a>
+                <a class="dropdown-item" href="./Archivos.php">Archivos</a>
             </div>
         </div>
         <div class="btn-group" role="group">
             <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                Usuario
+              aria-haspopup="true" aria-expanded="false">
+              Usuario
             </button>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="btnGroupDrop1">
-                <a class="dropdown-item" href="./Roles.html">Roles</a>
-                <a class="dropdown-item" href="./Usuario.html">Usuarios</a>
-                <a class="dropdown-item" href="./Cerrar_sesion.html">Cerrar sesión</a>
+              <a class="dropdown-item" href="../Proyecto/index.php">Cerrar sesión</a>
             </div>
-        </div>
+          </div>
     </nav>
     <div class=" d-flex justify-content-center my-5">
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header d-flex">
                     <h5>Creacion de Estudiante</h5>
-                    <a href="./Estudiantes.html" class="btn btn-primary ml-auto ">Regresar</a>
+                    <a href="./Estudiantes.php" class="btn btn-primary ml-auto ">Regresar</a>
                     <!--enlasar con  creacion-->
                 </div>
                 <div class="card-body">

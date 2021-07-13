@@ -1,3 +1,9 @@
+<?php
+
+include_once('./enlace/config/DBconect.php');
+$conexion=new Database;
+$resultado=$conexion->datosmaterias();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,10 +20,11 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
     crossorigin="anonymous"></script>
-  <title>Listado de estudiantes P</title>
+    <link rel="stylesheet" href="../styless.css" />
+  <title>Listado de Materias A</title>
 </head>
 
-<body>
+<body class="color-background">
   <nav class="navbar navbar-default" style="background-color: #e3f2fd;">
     <!-- Navbar content -->
     <div class="btn-group" role="group">
@@ -26,9 +33,9 @@
         Estudiantes
       </button>
       <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-        <a class="dropdown-item" href="./Estudiantes.html">Ver estudiantes</a>
-        <a class="dropdown-item" href="./Materia.html">Materias</a>
-        <a class="dropdown-item" href="./Archivos.html">Archivos</a>
+        <a class="dropdown-item" href="./Estudiantes.php">Ver estudiantes</a>
+        <a class="dropdown-item" href="./Materia.php ">Materias</a>
+        <a class="dropdown-item" href="./Archivos.php">Archivos</a>
       </div>
     </div>
     <div class="btn-group" role="group">
@@ -36,9 +43,12 @@
         aria-haspopup="true" aria-expanded="false">
         Usuario
       </button>
-      <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-        <a class="dropdown-item" href="./Cerrar_sesion.html">Cerrar sesión</a>
-        
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="btnGroupDrop1">
+        <a class="dropdown-item" href="./Roles.php">Roles</a>
+        <a class="dropdown-item" href="./Usuario.php">Usuarios</a>
+        <a class="dropdown-item" href="../Proyecto/index.php">Cerrar sesión</a>
+      </div>
+    </div>
   </nav>
 
   <!--Materias-->
@@ -46,34 +56,41 @@
     <div class="col-md-6">
       <div class="card">
         <div class="card-header d-flex">
-          <h5>Listado de Estudiantes</h5>
-          <button type="submit" class="btn btn-primary ml-auto">Crear Estudiante</button>
-          <a class="" href="./Creacion_de_materia.html"></a>
-
-          <!--enlasar con  creacion de Estudiantes-->
-          
+          <h5>Listado de Materias</h5>
+          <a href="./Creacion_de_materia.php" class="btn btn-primary ml-auto">Crear Materias</a>
 
 
+          <!--enlasar con  creacion de materias-->
         </div>
         <div class="card-body">
-          <div class="alert alert-success" role="alert">
-            
-          </div>
+          <div class="alert alert-success" role="alert">No se a podido realizar el comando</div>
+        </div>
+       
 
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item"><b>#</b></li>
-            <li class="list-group-item">1</li>
-            <li class="list-group-item">2</li>
-            <li class="list-group-item">3</li>
-            <li class="list-group-item">4</li>
-          </ul>
+          <div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">id</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Herramientas</th>
+                </tr>
+              </thead>
+              <tbody>
+              <?php
+        foreach($resultado as $fila){
+            echo "<tr>
+                <td>".$fila['id']."</td>
+                <td>".$fila['nombres']."</td>
+                <td></td>
+            </tr>";
+        }
+    ?>
+            </tbody>
+          </table>
         </div>
       </div>
-
-    </div>
   </div>
-
-  <a href="./Creacion_de_materia.html"></a>
 </body>
 
 </html>

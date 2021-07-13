@@ -12,9 +12,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
         crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../styless.css" />
     <title>Notas E</title>
 </head>
-<body>
+<body class="color-baackground">
     <nav class="navbar" style="background-color: #e3f2fd;">
         <!-- Navbar content -->
         <div class="btn-group" role="group">
@@ -22,8 +23,8 @@
               Mi Información
             </button>
             <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-              <a class="dropdown-item" href="./Notas.html">Notas</a>
-              <a class="dropdown-item" href="./Archivos.html">Archivos</a>
+              <a class="dropdown-item" href="./Notas.php">Notas</a>
+              <a class="dropdown-item" href="./Archivos.php">Archivos</a>
             </div>
           </div>
           <div class="btn-group" role="group">
@@ -32,7 +33,7 @@
               Usuario
             </button>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="btnGroupDrop1">
-              <a class="dropdown-item" href="./Cerrar_sesion.html">Cerrar sesión</a>
+              <a class="dropdown-item" href="../Proyecto/index.php">Cerrar sesión</a>
             </div>
           </div>
       </nav>

@@ -14,10 +14,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
         crossorigin="anonymous"></script>
-    <title>Creacion de estudiante P</title>
+        <link rel="stylesheet" href="../styless.css" />
+    <title>Creacion de estudiante A</title>
 </head>
 
-<body>
+<body class="color-background">
     <nav class="navbar" style="background-color: #e3f2fd;">
         <!-- Navbar content -->
         <div class="btn-group" role="group">
@@ -26,55 +27,72 @@
                 Estudiantes
             </button>
             <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                <a class="dropdown-item" href="./Estudiantes.html">Ver estudiantes</a>
-                <a class="dropdown-item" href="./Materia.html">Materias</a>
-                <a class="dropdown-item" href="./Archivos.html">Archivos</a>
+                <a class="dropdown-item" href="./Estudiantes.php">Ver estudiantes</a>
+                <a class="dropdown-item" href="./Materia.php">Materias</a>
+                <a class="dropdown-item" href="./Archivos.php">Archivos</a>
             </div>
         </div>
         <div class="btn-group" role="group">
             <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              Usuario
+                aria-haspopup="true" aria-expanded="false">
+                Usuario
             </button>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="btnGroupDrop1">
-              <a class="dropdown-item" href="./Cerrar_sesion.html">Cerrar sesión</a>
+                <a class="dropdown-item" href="./Roles.php">Roles</a>
+                <a class="dropdown-item" href="./Usuario.php">Usuarios</a>
+                <a class="dropdown-item" href="../Proyecto/index.php">Cerrar sesión</a>
             </div>
-          </div>
+        </div>        
     </nav>
     <div class=" d-flex justify-content-center my-5">
-        <div class="col-md-6">
+        <div class="col-md-15">
             <div class="card">
                 <div class="card-header d-flex">
                     <h5>Creacion de Estudiante</h5>
-                    <a href="./Estudiantes.html" class="btn btn-primary ml-auto ">Regresar</a>
+                    <a href="./Estudiantes.php" class="btn btn-primary ml-auto ">Regresar</a>
                     <!--enlasar con  creacion-->
                 </div>
                 <div class="card-body">
-                    <form>
+                <?php 
+
+                if (isset($_GET['confirm'])) {
+                    if ($_GET['confirm'] === "0") {
+                        echo '<div class="alert alert-danger" role="alert">Dato no ingresado</div>';
+                    }
+                    if ($_GET['confirm'] === "1") {
+                        echo '<div class="alert alert-success" role="alert">Dato ingresado correctamente.</div>';
+                    }
+                    if ($_GET['confirm'] === "2") {
+                        echo '<div class="alert alert-danger" role="alert">Uno o mas campos estan vacios</div>';
+                    }
+                    if ($_GET['confirm'] === "3") {
+                        echo '<div class="alert alert-danger" role="alert">Identificacion del estudiante ya registrado</div>';
+                    }
+                } 
+
+                ?>
+                    <form action="./enlace/config/insertar.php" method="POST">
                         <div class="form-group">
                             <label for="user">Identificación</label>
-                            <input required type="text" class="form-control" id="user">
+                            <input required type="text" id="identificacion" name="identificacion" class="form-control" id="user">
                         </div>
                         <div>
                             <label for="Iduser">Nombres</label>
-                            <input required type="text" class="form-control">
+                            <input required type="text" id="nombres" name="nombres" class="form-control">
                         </div>
                         <div>
-                            <label for="Iduser">Apellidos</label>
-                            <input required type="text" class="form-control">
+                            <label for="Apellidos">Apellidos</label> 
+                            <input required type="text" id="apellidos" name="apellidos" class="form-control">
                         </div>
                         <div>
                             <label for="Iduser">Email</label>
-                            <input required type="email" class="form-control">
+                            <input required type="email" id="email" name="email" class="form-control">
                         </div>
-                        <div>
-                            <label for="Iduser">Contraseña</label>
-                            <input required type="password" class="form-control">
-                        </div>
+                        
                         <div>
                             <label for="Iduser">Telefono</label>
-                            <input required type="number" class="form-control"><br><br>
-                        </div>
+                            <input required type="number"  id="telefono" name="telefono"  class="form-control"><br><br>
+                        </div><div class=""></div>
                         <button type="submit" class="btn btn-primary w-2%">Crear</button>
                     </form>
                 </div>
