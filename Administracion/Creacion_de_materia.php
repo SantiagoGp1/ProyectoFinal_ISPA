@@ -50,7 +50,7 @@
       <div class="card">
         <div class="card-header d-flex">
           <h5>Creacion de Materia</h5>
-          <a href="./Materia.php" class="btn btn-primary ml-auto ">Regresar</a>
+          <a href="./Materia.php" class="btn btn-primary ml-auto">Regresar</a>
         </div>
         <div class="card-body">
            <?php 
@@ -68,6 +68,12 @@
                     if ($_GET['confirm'] === "3") {
                         echo '<div class="alert alert-danger" role="alert">Materia ya registrado</div>';
                     }
+                    if ($_GET['confirm'] === "4") {
+                      echo '<div class="alert alert-success" role="alert">Materia actualizada</div>';
+                  }
+                  if ($_GET['confirm'] === "5") {
+                    echo '<div class="alert alert-danger" role="alert">Materia no actualizada</div>';
+                }
                 } 
 
                 ?>

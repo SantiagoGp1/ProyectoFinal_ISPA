@@ -153,4 +153,38 @@ class Database
         $query->execute();
         return $query;
     }
+     //---------------------------------------------
+     public function editMateria($id){
+        $conexion = Database::getInstance();
+        $query = $conexion->db->prepare('SELECT * from materias WHERE id=:id');
+        $query->execute(
+            array(
+                ':id' => $id
+            )
+        );
+        return $query;
+     }
+     //---------------------------------------------
+     public function updateMateria ($id, $nombres){
+         try{
+            $conexion=Database::getInstance();
+            $query=$conexion->db->prepare('UPDATE materias SET nombres=:nombres Where id=:id');
+            $query->execute (
+                array(
+                    ':nombres'=>$nombres,
+                    ':id'=> $id           
+                    )
+                );
+                return'4';
+
+         } catch (PDOException $error){
+             return '5';
+         }
+
+
+        
+
+
+
+     }
 }
